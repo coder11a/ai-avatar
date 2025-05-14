@@ -35,9 +35,9 @@ export default function AIDashboard() {
     const fetchData = async () => {
      
         setAvatars([
-          { id: 1, name: 'AI Blogger', image: '/bot.png', description: 'Your helpful AI blog assistant', status: 'active' },
-          { id: 2, name: 'AI Story Writer', image: '/bot.png', description: 'Your creative AI story writer', status: 'active' },
-          { id: 3, name: 'AI Coder', image: '/bot.png', description: 'Your coding AI assistant', status: 'active' },
+          { id: 1, name: 'Men Fashion Influencer', image: '/men.png', description: 'Rahul', status: 'active' },
+          { id: 2, name: 'Kids Fashion Influencer', image: '/kid.png', description: 'Sam', status: 'active' },
+          { id: 3, name: 'Women Fashion Influencer', image: '/women.png', description: 'Priya', status: 'active' },
 
         ]);
         setLoading(false);
@@ -280,10 +280,10 @@ function AvatarCard({ avatar }: AvatarCardProps) {
 
         <div className="mt-4 flex flex-wrap gap-2">
           <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-            Assistant
+            Influencer
           </span>
           <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
-            GPT-4
+            New
           </span>
         </div>
       </div>
@@ -317,7 +317,7 @@ function CreateAvatarModal({ onClose }: CreateAvatarModalProps) {
   const [formData, setFormData] = useState({
     name: '',
     description: '',
-    type: 'assistant'
+    type: ''
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -352,7 +352,7 @@ function CreateAvatarModal({ onClose }: CreateAvatarModalProps) {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="e.g., Creative Writer"
+                placeholder="e.g., influencer"
                 className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white transition-colors"
               />
             </div>
@@ -369,23 +369,6 @@ function CreateAvatarModal({ onClose }: CreateAvatarModalProps) {
                 rows={3}
                 className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white transition-colors"
               ></textarea>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                Avatar Type
-              </label>
-              <select
-                name="type"
-                value={formData.type}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white transition-colors"
-              >
-                <option value="assistant">General Assistant</option>
-                <option value="writer">Creative Writer</option>
-                <option value="coder">Code Assistant</option>
-                <option value="custom">Custom</option>
-              </select>
             </div>
 
             <div className="pt-4">
