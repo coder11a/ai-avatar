@@ -23,7 +23,7 @@ export default function AIDashboard() {
   const [avatars, setAvatars] = useState<Avatar[]>([]);
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [username, setUsername] = useState("User");
+  const [username, setUsername] = useState("Rohit");
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
